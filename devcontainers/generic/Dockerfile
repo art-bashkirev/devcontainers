@@ -27,10 +27,10 @@ FROM artbashkirev/base:latest
 ARG DEBIAN_FRONTEND=noninteractive
 
 # Install Powerline Fonts
-RUN git clone https://github.com/powerline/fonts.git --depth=1 \
-    cd fonts \
-    ./install.sh \
-    cd .. \
+RUN git clone https://github.com/powerline/fonts.git --depth=1 && \
+    cd fonts && \
+    ./install.sh && \
+    cd .. && \
     rm -rf fonts
 
 # Unset user
