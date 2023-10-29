@@ -26,12 +26,12 @@ RUN wget https://github.com/novnc/noVNC/archive/refs/tags/v1.4.0.zip -P /tmp && 
 FROM artbashkirev/base:latest
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Install Powerline Fonts
-RUN git clone https://github.com/powerline/fonts.git --depth=1 && \
-    cd fonts && \
-    ./install.sh && \
-    cd .. && \
-    rm -rf fonts
+# # Install Powerline Fonts
+# RUN git clone https://github.com/powerline/fonts.git --depth=1 && \
+#     cd fonts && \
+#     ./install.sh && \
+#     cd .. && \
+#     rm -rf fonts
 
 # Unset user
 USER root
@@ -57,15 +57,11 @@ RUN apt update && apt install --no-install-recommends --yes \
 
 # Install Python packages
 RUN pip3 install --upgrade --no-cache-dir \
+    black \
     numpy \
     matplotlib \
     pytz \
     setuptools
-
-# Copy files to image
-# COPY ./etc /etc
-# COPY ./opt /opt
-
 
 # Set user
 USER code
@@ -75,4 +71,4 @@ RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 
 COPY .zshrc /home/code/.zshrc
 RUN sudo chsh -s $(which zsh) $(whoami)
-
+RUN export PATH=$PATH:/home/code/.local/bin
