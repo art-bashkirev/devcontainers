@@ -74,5 +74,5 @@ RUN pip3 install --upgrade --no-cache-dir \
 USER code
 
 COPY .zshrc ~/.zshrc
-RUN chsh -s $(which zsh)
+RUN sudo chsh -s $(which zsh) $(whoami)
 
