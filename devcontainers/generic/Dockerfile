@@ -55,9 +55,6 @@ RUN apt update && apt install --no-install-recommends --yes \
     rm -rf /var/lib/apt/lists/*
 
 
-# Oh-my-Zsh setup
-RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-
 # Install Python packages
 RUN pip3 install --upgrade --no-cache-dir \
     numpy \
@@ -72,6 +69,9 @@ RUN pip3 install --upgrade --no-cache-dir \
 
 # Set user
 USER code
+
+# Oh-my-Zsh setup
+RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 COPY .zshrc /home/code/.zshrc
 RUN sudo chsh -s $(which zsh) $(whoami)
