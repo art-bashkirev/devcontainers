@@ -115,15 +115,15 @@
                     "workbench.action.toggleSidebarVisibility"
                 ],
                 "terminal.integrated.enableBell": true,
-                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.defaultProfile.linux": "zsh",
                 "terminal.integrated.gpuAcceleration": "off",
                 "terminal.integrated.profiles.linux": {
-                    "bash": {
-                        "args": [
-                            "--login"
-                        ],
+                    "zsh": {
+                        // "args": [
+                        //     "--login"
+                        // ],
                         "icon": "terminal",
-                        "path": "bash"
+                        "path": "zsh"
                     },
                     "JavaScript Debug Terminal": null
                 },
@@ -133,7 +133,7 @@
                 "terminal.integrated.shellIntegration.decorationsEnabled": "never", /* Remove decoration for each command */
                 "terminal.integrated.tabs.description": "${task}${separator}${local}", /* Remove cwdFolder from description */
                 "terminal.integrated.tabs.showActiveTerminal": "never",
-                "window.autoDetectColorScheme": true,
+                "window.autoDetectColorScheme": false,
                 "workbench.colorCustomizations": {
                     "editor.lineHighlightBorder": "#0000", /* Disable gray border-{bottom,top} on active line */
                     "editorError.foreground": "#0000", /* Disable red squiggles */
@@ -164,6 +164,7 @@
                         "terminal.background": "#fff"
                     }
                 },
+                "workbench.colorTheme": "GitHub Dark Default",
                 "window.commandCenter": false,
                 "workbench.editorAssociations": {
                     "*.wav": "vscode.audioPreview"
