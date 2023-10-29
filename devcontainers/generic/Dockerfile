@@ -65,8 +65,6 @@ RUN pip3 install --upgrade --no-cache-dir \
     pytz \
     setuptools
 
-COPY ../../.zshrc ~/.zshrc
-
 # Copy files to image
 # COPY ./etc /etc
 # COPY ./opt /opt
@@ -74,4 +72,7 @@ COPY ../../.zshrc ~/.zshrc
 
 # Set user
 USER code
+
+COPY .zshrc ~/.zshrc
+RUN chsh -s $(which zsh)
 
