@@ -55,7 +55,7 @@ RUN apt update && apt install --no-install-recommends --yes \
     rm -rf /var/lib/apt/lists/*
 
 
-# ZSH setup
+# Oh-my-Zsh setup
 RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 
