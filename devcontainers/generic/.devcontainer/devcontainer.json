@@ -1,0 +1,191 @@
+{
+    "build": {
+        "args": {
+            "VCS_REF": "${localEnv:VCS_REF}"
+        },
+        "context": ".",
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "inferrinizzard.prettier-sql-vscode",
+                "mathematic.vscode-pdf",
+                "ms-python.python",
+                "ms-vscode.cpptools",
+                "ms-vscode.hexeditor",
+                "ms-vsliveshare.vsliveshare",
+                "redhat.java",
+                "vscjava.vscode-java-debug",
+                "vsls-contrib.gitdoc"
+            ],
+            "settings": {
+                "breadcrumbs.enabled": true,
+                "C_Cpp.autocomplete": true,
+                "C_Cpp.clang_format_fallbackStyle": "{ AllowShortFunctionsOnASingleLine: Empty, BraceWrapping: { AfterCaseLabel: true, AfterControlStatement: true, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true }, BreakBeforeBraces: Custom, ColumnLimit: 132, IndentCaseLabels: true, IndentWidth: 4, SpaceAfterCStyleCast: true, TabWidth: 4 }", /* https://clang.llvm.org/docs/ClangFormatStyleOptions.html */
+                "C_Cpp.codeFolding": "disabled",
+                "C_Cpp.debugShortcut": false,
+                "C_Cpp.dimInactiveRegions": true,
+                "C_Cpp.doxygen.generateOnType": true,
+                "C_Cpp.enhancedColorization": "enabled",
+                "C_Cpp.errorSquiggles": "enabled",
+                "C_Cpp.formatting": "clangFormat",
+                "diffEditor.diffAlgorithm": "advanced",
+                "diffEditor.ignoreTrimWhitespace": false,
+                "editor.autoClosingQuotes": "languageDefined",
+                "editor.colorDecorators": true,
+                "editor.emptySelectionClipboard": false,
+                "editor.folding": false,
+                "editor.foldingHighlight": false,
+                "editor.formatOnSave": true,
+                "editor.guides.indentation": false,
+                "editor.hover.enabled": true,
+                "editor.lightbulb.enabled": true,
+                "editor.matchBrackets": "always",
+                "editor.minimap.enabled": false,
+                "editor.occurrencesHighlight": false,
+                "editor.parameterHints.enabled": true,
+                "editor.quickSuggestions": {
+                    "other": true,
+                    "comments": true,
+                    "strings": true
+                },             
+                "editor.renderWhitespace": "selection",
+                "editor.selectionHighlight": false,
+                "editor.semanticTokenColorCustomizations": {
+                    "[GitHub Dark Default]": {
+                        "rules": {
+                            "type": "#FF7E76"
+                        }
+                    },
+                    "[GitHub Light Default]": {
+                        "rules": {
+                            "type": "#D2343F"
+                        }
+                    }
+                },
+                "editor.suggestOnTriggerCharacters": true,
+                "extensions.ignoreRecommendations": true,
+                "explorer.compactFolders": false,
+                "files.autoSave": "afterDelay",
+                "files.exclude": {
+                    "**/.*": true
+                },
+                "files.insertFinalNewline": true,
+                "files.trimTrailingWhitespace": true,
+                "files.watcherExclude": {
+                    "**/.git/objects/**": true,
+                    "**/.git/subtree-cache/**": true,
+                    "**/node_modules/*/**": true
+                },
+                "git.autofetch": true,
+                "github.codespaces.devcontainerChangedNotificationStyle": "none",
+                "git.decorations.enabled": false,
+                "git.terminalAuthentication": true,
+                "github.gitAuthentication": true,
+                "gitdoc.autoPull": "off",
+                "gitdoc.enabled": false,
+                "gitdoc.commitMessageFormat": "ccc, LLL d, kkkk, h:mm a ZZ",
+                "gitdoc.commitValidationLevel": "none",
+                "gitdoc.pullOnOpen": false,
+                "html.format.indentInnerHtml": true,
+                "html.suggest.html5": false,
+                "java.server.launchMode": "Standard",
+                "java.configuration.runtimes": [
+                    {
+                        "name": "JavaSE-20",
+                        "path": "/opt/jdk-20.0.2", /* env | grep JAVA_HOME (set in cs50/cli) */
+                        "default": true
+                    }
+                ],
+                "java.inlayHints.parameterNames.enabled": "none",
+                "java.debug.settings.enableRunDebugCodeLens": false,
+                "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+                "javascript.suggest.enabled": true,
+                "javascript.validate.enable": true,
+                "Prettier-SQL.keywordCase": "upper",
+                "problems.decorations.enabled": true,
+                "python.formatting.provider": "black",
+                "python.terminal.executeInFileDir": true,
+                "remote.otherPortsAttributes": {
+                    "onAutoForward": "silent"
+                },
+                "scm.countBadge": "all",
+                "terminal.integrated.commandsToSkipShell": [
+                    "workbench.action.toggleSidebarVisibility"
+                ],
+                "terminal.integrated.enableBell": true,
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.gpuAcceleration": "off",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "args": [
+                            "--login"
+                        ],
+                        "icon": "terminal",
+                        "path": "bash"
+                    },
+                    "JavaScript Debug Terminal": null
+                },
+                "terminal.integrated.persistentSessionReviveProcess": "never",
+                "terminal.integrated.sendKeybindingsToShell": true,
+                "terminal.integrated.shellIntegration.enabled": true,
+                "terminal.integrated.shellIntegration.decorationsEnabled": "never", /* Remove decoration for each command */
+                "terminal.integrated.tabs.description": "${task}${separator}${local}", /* Remove cwdFolder from description */
+                "terminal.integrated.tabs.showActiveTerminal": "never",
+                "window.autoDetectColorScheme": true,
+                "workbench.colorCustomizations": {
+                    "editor.lineHighlightBorder": "#0000", /* Disable gray border-{bottom,top} on active line */
+                    "editorError.foreground": "#0000", /* Disable red squiggles */
+                    "editorWarning.foreground": "#0000", /* Disable yellow squiggles */
+                    "editorGutter.addedBackground": "#0000",
+                    "editorGutter.deletedBackground": "#0000",
+                    "editorGutter.modifiedBackground": "#0000", /* Disable yellow bars to left of lines modified since last commit */
+                    "[GitHub Dark Default]": {
+                        "activityBar.background": "#000",
+                        "editor.background": "#000",
+                        "editor.lineHighlightBackground": "#0000",
+                        "editor.lineHighlightBorder": "#0000",
+                        "editorWhitespace.foreground": "#59A5FC",
+                        "panel.background": "#000",
+                        "sideBar.background": "#000",
+                        "terminal.foreground": "#fff",
+                        "terminal.background": "#000"
+                    },
+                    "[GitHub Light Default]": {
+                        "activityBar.background": "#fff",
+                        "editor.background": "#fff",
+                        "editor.lineHighlightBackground": "#fff0",
+                        "editor.lineHighlightBorder": "#fff0",
+                        "editorWhitespace.foreground": "#1167D7",
+                        "panel.background": "#fff",
+                        "sideBar.background": "#fff",
+                        "terminal.foreground": "#000",
+                        "terminal.background": "#fff"
+                    }
+                },
+                "window.commandCenter": false,
+                "workbench.editorAssociations": {
+                    "*.wav": "vscode.audioPreview"
+                },
+                "workbench.editor.closeOnFileDelete": true,
+                "workbench.editor.enablePreview": false,
+                "workbench.editor.untitled.hint": "hidden",
+                "workbench.iconTheme": "vs-seti",
+                "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+                "workbench.preferredLightColorTheme": "GitHub Light Default",
+                "workbench.startupEditor": "none",
+                "workbench.statusBar.visible": true,
+                "workbench.tips.enabled": false,
+                "workbench.welcomePage.walkthroughs.openOnInstall": false
+            }
+        }
+    },
+    "forwardPorts": [
+        5000, /* Flask */
+        5900, /* VNC server */
+        6081, /* VNC client */
+        8080 /* http-server */
+    ],
+    "postCreateCommand": "/opt/bin/postCreateCommand"
+}
