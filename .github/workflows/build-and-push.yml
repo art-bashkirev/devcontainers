@@ -27,8 +27,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           devcontainer build \
-            --workspace-folder devcontainers/generic/ \
-            --config devcontainers/generic/.devcontainer/devcontainer.json \
+            --workspace-folder ./devcontainers/generic/ \
               --image-name artbashkirev/codespace:generic-${{ github.sha }} \
               --image-name artbashkirev/codespace:generic
               --image-name artbashkirev/codespace:latest
