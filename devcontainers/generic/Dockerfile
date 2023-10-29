@@ -73,6 +73,6 @@ RUN pip3 install --upgrade --no-cache-dir \
 # Set user
 USER code
 
-COPY ../../.zshrc ~/.zshrc
+COPY .zshrc ~/.zshrc
 RUN chsh -s $(which zsh)
 
