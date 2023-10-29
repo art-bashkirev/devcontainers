@@ -26,6 +26,13 @@ RUN wget https://github.com/novnc/noVNC/archive/refs/tags/v1.4.0.zip -P /tmp && 
 FROM artbashkirev/base:latest
 ARG DEBIAN_FRONTEND=noninteractive
 
+# Install Powerline Fonts
+RUN git clone https://github.com/powerline/fonts.git --depth=1 \
+    cd fonts \
+    ./install.sh \
+    cd .. \
+    rm -rf fonts
+
 # Unset user
 USER root
 
