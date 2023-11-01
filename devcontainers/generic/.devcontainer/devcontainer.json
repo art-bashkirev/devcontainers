@@ -17,7 +17,8 @@
                 "ms-vsliveshare.vsliveshare",
                 "redhat.java",
                 "vscjava.vscode-java-debug",
-                "vsls-contrib.gitdoc"
+                "vsls-contrib.gitdoc",
+                "ms-toolsai.jupyter"
             ],
             "settings": {
                 "breadcrumbs.enabled": true,
