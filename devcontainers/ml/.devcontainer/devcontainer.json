@@ -1,0 +1,157 @@
+{
+    "build": {
+        "args": {
+            "VCS_REF": "${localEnv:VCS_REF}"
+        },
+        "context": ".",
+        "dockerfile": "../Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "inferrinizzard.prettier-sql-vscode",
+                "mathematic.vscode-pdf",
+                "ms-python.python",
+                "ms-vscode.hexeditor",
+                "ms-vsliveshare.vsliveshare"
+            ],
+            "settings": {
+                "breadcrumbs.enabled": true,
+                "diffEditor.diffAlgorithm": "advanced",
+                "diffEditor.ignoreTrimWhitespace": false,
+                "editor.autoClosingQuotes": "languageDefined",
+                "editor.colorDecorators": true,
+                "editor.emptySelectionClipboard": false,
+                "editor.folding": false,
+                "editor.foldingHighlight": false,
+                "editor.formatOnSave": true,
+                "editor.guides.indentation": false,
+                "editor.hover.enabled": true,
+                "editor.lightbulb.enabled": true,
+                "editor.matchBrackets": "always",
+                "editor.minimap.enabled": false,
+                "editor.occurrencesHighlight": true,
+                "editor.parameterHints.enabled": true,
+                "editor.quickSuggestions": {
+                    "other": true,
+                    "comments": true,
+                    "strings": true
+                },             
+                "editor.renderWhitespace": "selection",
+                "editor.selectionHighlight": true,
+                "editor.semanticTokenColorCustomizations": {
+                    "[GitHub Dark Default]": {
+                        "rules": {
+                            "type": "#FF7E76"
+                        }
+                    },
+                    "[GitHub Light Default]": {
+                        "rules": {
+                            "type": "#D2343F"
+                        }
+                    }
+                },
+                "editor.suggestOnTriggerCharacters": true,
+                "extensions.ignoreRecommendations": true,
+                "explorer.compactFolders": false,
+                "files.autoSave": "afterDelay",
+                "files.exclude": {
+                    "**/.*": true
+                },
+                "files.insertFinalNewline": true,
+                "files.trimTrailingWhitespace": true,
+                "files.watcherExclude": {
+                    "**/.git/objects/**": true,
+                    "**/.git/subtree-cache/**": true,
+                    "**/node_modules/*/**": true
+                },
+                "git.autofetch": true,
+                "github.codespaces.devcontainerChangedNotificationStyle": "none",
+                "git.decorations.enabled": false,
+                "git.terminalAuthentication": true,
+                "github.gitAuthentication": true,
+                "html.format.indentInnerHtml": true,
+                "html.suggest.html5": false,
+                "Prettier-SQL.keywordCase": "upper",
+                "problems.decorations.enabled": true,
+                "python.formatting.provider": "black",
+                "python.terminal.executeInFileDir": true,
+                "remote.otherPortsAttributes": {
+                    "onAutoForward": "silent"
+                },
+                "scm.countBadge": "all",
+                "terminal.integrated.commandsToSkipShell": [
+                    "workbench.action.toggleSidebarVisibility"
+                ],
+                "terminal.integrated.enableBell": true,
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.gpuAcceleration": "off",
+                "terminal.integrated.profiles.linux": {
+                    "zsh": {
+                        "icon": "terminal",
+                        "path": "zsh"
+                    },
+                },
+                "terminal.integrated.persistentSessionReviveProcess": "never",
+                "terminal.integrated.sendKeybindingsToShell": true,
+                "terminal.integrated.shellIntegration.enabled": true,
+                "terminal.integrated.shellIntegration.decorationsEnabled": "never", /* Remove decoration for each command */
+                "terminal.integrated.tabs.description": "${task}${separator}${local}", /* Remove cwdFolder from description */
+                "terminal.integrated.tabs.showActiveTerminal": "never",
+                "window.autoDetectColorScheme": false,
+                "workbench.colorCustomizations": {
+                    "editor.lineHighlightBorder": "#0000", /* Disable gray border-{bottom,top} on active line */
+                    "editorError.foreground": "#0000", /* Disable red squiggles */
+                    "editorWarning.foreground": "#0000", /* Disable yellow squiggles */
+                    "editorGutter.addedBackground": "#0000",
+                    "editorGutter.deletedBackground": "#0000",
+                    "editorGutter.modifiedBackground": "#0000", /* Disable yellow bars to left of lines modified since last commit */
+                    "[GitHub Dark Default]": {
+                        "activityBar.background": "#000",
+                        "editor.background": "#000",
+                        "editor.lineHighlightBackground": "#0000",
+                        "editor.lineHighlightBorder": "#0000",
+                        "editorWhitespace.foreground": "#59A5FC",
+                        "panel.background": "#000",
+                        "sideBar.background": "#000",
+                        "terminal.foreground": "#fff",
+                        "terminal.background": "#000"
+                    },
+                    "[GitHub Light Default]": {
+                        "activityBar.background": "#fff",
+                        "editor.background": "#fff",
+                        "editor.lineHighlightBackground": "#fff0",
+                        "editor.lineHighlightBorder": "#fff0",
+                        "editorWhitespace.foreground": "#1167D7",
+                        "panel.background": "#fff",
+                        "sideBar.background": "#fff",
+                        "terminal.foreground": "#000",
+                        "terminal.background": "#fff"
+                    }
+                },
+                "workbench.colorTheme": "GitHub Dark Default",
+                "window.commandCenter": false,
+                "workbench.editorAssociations": {
+                    "*.wav": "vscode.audioPreview"
+                },
+                "workbench.editor.closeOnFileDelete": true,
+                "workbench.editor.enablePreview": false,
+                "workbench.editor.untitled.hint": "hidden",
+                "workbench.iconTheme": "vs-seti",
+                "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+                "workbench.preferredLightColorTheme": "GitHub Light Default",
+                "workbench.startupEditor": "none",
+                "workbench.statusBar.visible": true,
+                "workbench.tips.enabled": false,
+                "workbench.welcomePage.walkthroughs.openOnInstall": false
+            }
+        }
+    },
+    "forwardPorts": [
+        5000, /* Flask */
+        5900, /* VNC server */
+        6081, /* VNC client */
+        8080 /* http-server */
+    ],
+    "postCreateCommand": "pip install --upgrade -r requirements.txt"
+}
