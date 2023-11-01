@@ -12,12 +12,13 @@
                 "inferrinizzard.prettier-sql-vscode",
                 "mathematic.vscode-pdf",
                 "ms-python.python",
+                "ms-python.black-formatter",
                 "ms-vscode.cpptools",
                 "ms-vscode.hexeditor",
                 "ms-vsliveshare.vsliveshare",
                 "redhat.java",
                 "vscjava.vscode-java-debug",
-                "vsls-contrib.gitdoc",
+                // "vsls-contrib.gitdoc",
                 "ms-toolsai.jupyter"
             ],
             "settings": {
@@ -84,11 +85,11 @@
                 "git.decorations.enabled": false,
                 "git.terminalAuthentication": true,
                 "github.gitAuthentication": true,
-                "gitdoc.autoPull": "off",
-                "gitdoc.enabled": false,
-                "gitdoc.commitMessageFormat": "ccc, LLL d, kkkk, h:mm a ZZ",
-                "gitdoc.commitValidationLevel": "none",
-                "gitdoc.pullOnOpen": false,
+                // "gitdoc.autoPull": "off",
+                // "gitdoc.enabled": false,
+                // "gitdoc.commitMessageFormat": "ccc, LLL d, kkkk, h:mm a ZZ",
+                // "gitdoc.commitValidationLevel": "none",
+                // "gitdoc.pullOnOpen": false,
                 "html.format.indentInnerHtml": true,
                 "html.suggest.html5": false,
                 "java.server.launchMode": "Standard",
@@ -106,8 +107,10 @@
                 "javascript.validate.enable": true,
                 "Prettier-SQL.keywordCase": "upper",
                 "problems.decorations.enabled": true,
-                "python.formatting.provider": "black",
                 "python.terminal.executeInFileDir": true,
+                "[python]": {
+                    "editor.defaultFormatter": "ms-python.black-formatter"
+                },
                 "remote.otherPortsAttributes": {
                     "onAutoForward": "silent"
                 },
