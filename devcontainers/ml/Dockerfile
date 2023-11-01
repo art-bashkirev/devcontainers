@@ -50,7 +50,7 @@ RUN pip3 install --upgrade --no-cache-dir \
     requests \
     huggingface_hub \
     datasets \
-    transformers \
+    transformers[torch] \
     torch
     
 
