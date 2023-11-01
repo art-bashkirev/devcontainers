@@ -47,7 +47,8 @@ RUN pip3 install --upgrade --no-cache-dir \
     numpy \
     matplotlib \
     pytz \
-    setuptools
+    setuptools \
+    ipykernel
 
 # Set user
 USER code
