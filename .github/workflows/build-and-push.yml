@@ -20,14 +20,6 @@ jobs:
          username: ${{ secrets.DOCKERHUB_USERNAME }}
          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-     - name: Log into GitHub Packages
-       if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop' }}
-       uses: docker/login-action@v3
-       with:
-         registry: ghcr.io
-         username: ${{ github.actor }}
-         password: ${{ secrets.GITHUB_TOKEN }}
-
      - name: Install build bundler
        if: ${{ github.ref == 'refs/heads/main' }}
        run: |
@@ -42,7 +34,6 @@ jobs:
              --image-name artbashkirev/codespace:generic-${{ github.sha }} \
              --image-name artbashkirev/codespace:generic \
              --image-name artbashkirev/codespace:latest \
-             --image-name ghcr.io/art-bashkirev/codespace:latest
 
      - name: Push to Docker Hub
        if: ${{ github.ref == 'refs/heads/main' }}
@@ -50,7 +41,6 @@ jobs:
          docker push artbashkirev/codespace:generic-${{ github.sha }}
          docker push artbashkirev/codespace:generic
          docker push artbashkirev/codespace:latest
-         docker push ghcr.io/art-bashkirev/codespace:latest
 
  build-ml:
    runs-on: ubuntu-latest
