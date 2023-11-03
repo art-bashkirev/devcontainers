@@ -50,6 +50,8 @@ RUN pip3 install --upgrade --no-cache-dir \
     setuptools \
     ipykernel ipywidgets jupyter
 
+RUN mkdir /workspaces/ && chown -R code:code /workspaces
+
 # Set user
 USER code
 
