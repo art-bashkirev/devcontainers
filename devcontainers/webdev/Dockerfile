@@ -45,6 +45,7 @@ RUN pip3 install --upgrade --no-cache-dir \
     django django-cors-headers djangorestframework argon2-cffi bcrypt \
     flask
 
+RUN systemctl enable snapd.service && systemctl start snapd.service
 
 # Install Snap packages
 RUN snap install core && \
