@@ -25,7 +25,6 @@ RUN apt update && \
         cmake \
         wget \
         curl \
-        snapd \
         git \
         ninja-build \
         pkg-config \
@@ -34,6 +33,12 @@ RUN apt update && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
+RUN cd / && \
+    curl https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.9-stable.tar.xz --output flutter.tar.xz && \
+    tar xf flutter.tar.xz && \
+    rm --force flutter.tar.xz && \
+    export PATH=$PATH:/flutter/bin && \
+    flutter precache
 
 # Install Python packages
 RUN pip3 install --upgrade --no-cache-dir \
@@ -45,11 +50,6 @@ RUN pip3 install --upgrade --no-cache-dir \
     django django-cors-headers djangorestframework argon2-cffi bcrypt \
     flask
 
-RUN systemctl enable snapd.service && systemctl start snapd.service
-
-# Install Snap packages
-RUN snap install core && \
-    snap install flutter --classic
 
 # Set user back
 USER code
