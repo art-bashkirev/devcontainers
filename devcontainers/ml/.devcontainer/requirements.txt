@@ -98,7 +98,6 @@ scikit-plot
 fury
 dipy
 plotnine
-scikit-surprise
 pymongo
 geoplot
 eli5
