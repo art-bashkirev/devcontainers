@@ -33,22 +33,15 @@ RUN apt update && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN cd / && \
-    curl https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.9-stable.tar.xz --output flutter.tar.xz && \
-    tar xf flutter.tar.xz && \
-    rm --force flutter.tar.xz && \
-    export PATH=$PATH:/flutter/bin && \
-    flutter precache
-
 # Install Python packages
+COPY ./requirements.txt /requirements.txt
+
 RUN pip3 install --upgrade --no-cache-dir \
     black \
     numpy \
     matplotlib \
-    pytz \
-    setuptools \
-    django django-cors-headers djangorestframework argon2-cffi bcrypt \
-    flask
+    setuptools && \
+    pip3 install --upgrade --no-cache-dir -r /requirements.txt
 
 
 # Set user back

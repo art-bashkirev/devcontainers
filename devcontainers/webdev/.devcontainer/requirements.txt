@@ -1,0 +1,11 @@
+django
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt
+django-allauth
+dj-rest-auth[with_social]
+
+argon2-cffi
+mysql-client
+redis[hiredis]
+hypercorn
