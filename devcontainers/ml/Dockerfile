@@ -29,30 +29,21 @@ RUN apt update && \
         libglib2.0-0 \
         libsm6 \
         libxext6 \
-        libxrender-dev && \
+        libxrender-dev \
+        graphviz \
+        pandoc && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-
 # Install Python packages
+COPY ./requirements.txt /requirements.txt
+
 RUN pip3 install --upgrade --no-cache-dir \
     black \
     numpy \
     matplotlib \
-    pytz \
-    setuptools \
-    onnxruntime \
-    pillow \
-    onnxruntime \
-    onnx \
-    opencv-python \
-    gradio \
-    requests \
-    huggingface_hub \
-    datasets \
-    transformers[torch] \
-    torch
-    
+    setuptools && \
+    pip3 install --upgrade --no-cache-dir -r /requirements.txt
 
 # Set user back
 USER code

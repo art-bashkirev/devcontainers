@@ -1,0 +1,65 @@
+scipy
+numpy
+sympy
+simpy
+mpmath
+sage
+pandas
+scikit-image
+scikit-learn
+scikit-learn-intelex
+scikit-optimize
+scikit-multilearn
+scikit-plot
+scikit-surprise
+
+
+h5py
+
+# Image
+pillow
+opencv-python
+spectral
+pydicom
+
+# Astronomy
+PyAstronomy
+astropy[all]
+astroML
+sunpy[all]
+
+# Biology
+biopython
+cantera
+pybiomed
+
+# Chemistry
+chempy
+chemlib
+mendeleev
+
+onnxruntime
+onnx
+gradio
+requests
+
+# Visualization
+matplotlib
+seaborn
+igraph
+graphviz
+pandoc
+
+torch
+lightgbm
+xgboost
+catboost
+imbalanced-learn
+
+numba
+datashader
+
+# 
+transformers[torch]
+datasets
+huggingface_hub

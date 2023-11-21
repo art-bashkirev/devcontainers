@@ -1,0 +1,119 @@
+# Install spacy
+spacy
+cupy
+cuda-version
+
+# Install PyTorch
+torch
+torchvision
+torchaudio
+torchtext
+
+# Install LightGBM
+lightgbm
+cudf
+cuml
+
+# Install JAX
+jax[cuda11_local]
+
+# Install GPU specific packages
+pycuda
+pynvrtc
+pynvml
+
+# Install other packages
+matplotlib<3.8.0
+seaborn
+python-dateutil
+dask
+igraph
+pyyaml
+joblib
+husl
+geopy
+mne
+pyshp
+pandas
+polars
+flax
+
+# Install cython & cysignals before pyfasttext
+cython
+cysignals
+pyfasttext
+fasttext
+
+# Install annoy & category_encoders
+annoy
+category_encoders
+
+# Install Google Cloud packages
+
+protobuf==3.20.3
+ortools
+scattertext
+pandas-datareader
+wordsegment
+emoji
+janome
+wfdb
+vecstack
+yellowbrick
+mlcrate
+
+# Install bleach, certifi, cycler, decorator, entrypoints, html5lib, ipykernel, ipython, ipython-genutils, ipywidgets, isoweek, jedi, jsonschema, jupyter-client, jupyter-console, jupyter-core, jupyterlab-lsp, MarkupSafe, mistune, nbformat, notebook, nbconvert, papermill, python-lsp-server, olefile, kornia, pandas_summary, pandocfilters, pexpect, pickleshare, pyarrow, feather-format, fastai
+bleach
+certifi
+cycler
+decorator
+entrypoints
+html5lib
+ipykernel
+ipython
+ipython-genutils
+ipywidgets
+isoweek
+jedi
+jsonschema
+jupyter-client
+jupyter-console
+jupyter-core
+jupyterlab-lsp
+MarkupSafe
+mistune
+nbformat
+notebook
+nbconvert
+papermill
+python-lsp-server
+olefile
+kornia
+pandas_summary
+pandocfilters
+pexpect
+pickleshare
+pyarrow
+feather-format
+fastai
+
+# Install flashtext, wandb, blake3, vaex, marisa-trie, pyemd, pyupset, pympler, s3fs, featuretools, hpsklearn, git+https://github.com/Kaggle/learntools, kmapper, shap, ray, gym, pyarabic, pandasql, tensorflow_hub, tensorflowjs, jieba, cesium, rgf_python, tsfresh, pykalman, optuna, plotly_express, albumentations, accelerate, git+https://github.com/Philmod/catalyst.git@fix-fp16, osmnx, keras-core, keras-cv, keras-nlp
+flashtext
+wandb
+blake3==0.2.1
+vaex
+marisa-trie
+pyemd
+pyupset
+pympler
+s3fs
+featuretools
+hpsklearn
+git+https://github.com/Kaggle/learntools
+kmapper
+shap
+ray
+gym
+pyarabic
+pandasql
+tensorflow
