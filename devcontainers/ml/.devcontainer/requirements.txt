@@ -101,7 +101,6 @@ plotnine
 pymongo
 geoplot
 eli5
-kaggle
 mock
 pytest
 bleach
@@ -176,7 +175,6 @@ earthengine-api
 huggingface_hub
 transformers
 datasets
-kaggle-environments
 geopandas
 shapely
 vowpalwabbit
