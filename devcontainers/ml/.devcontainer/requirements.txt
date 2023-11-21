@@ -92,7 +92,6 @@ hypertools
 mlens
 scikit-multilearn
 cleverhans
-leven
 folium
 scikit-plot
 fury
@@ -140,7 +139,6 @@ fastai
 flashtext
 wandb
 blake3
-vaex
 marisa-trie
 pyemd
 pyupset
@@ -177,7 +175,6 @@ transformers
 datasets
 geopandas
 shapely
-vowpalwabbit
 pydub
 pydegensac
 torchmetrics
