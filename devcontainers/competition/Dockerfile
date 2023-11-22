@@ -27,8 +27,6 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Python packages
-COPY ./requirements.txt /requirements.txt
-
 RUN pip3 install --upgrade --no-cache-dir \
     pip \
     black \
@@ -38,7 +36,7 @@ RUN pip3 install --upgrade --no-cache-dir \
 
 # Install Competition.st
 RUN cd /tmp && \
-    git clone --depth 1 https://github.com/art-bashkirev/competition.st.git
+    # git clone --depth 1 https://github.com/art-bashkirev/competition.st.git
 # ! TODO
 
 
