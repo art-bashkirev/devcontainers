@@ -31,9 +31,12 @@ jobs:
         run: |
           devcontainer build \
             --workspace-folder ./devcontainers/generic/ \
-              --image-name artbashkirev/codespace:generic-${{ github.sha }} \
-              --image-name artbashkirev/codespace:generic \
-              --image-name artbashkirev/codespace:latest \
+              --image-name artbashkirev/codespace:generic
+        
+      - name: Tag Generic
+        run: |
+          docker tag artbashkirev/codespace:generic artbashkirev/codespace:generic-${{ github.sha }}
+          docker tag artbashkirev/codespace:generic artbashkirev/codespace:latest
 
       - name: Push to Docker Hub
         if: ${{ github.ref == 'refs/heads/main' }}
@@ -69,8 +72,11 @@ jobs:
         run: |
           devcontainer build \
             --workspace-folder ./devcontainers/ml/ \
-              --image-name artbashkirev/codespace:ml-${{ github.sha }} \
               --image-name artbashkirev/codespace:ml
+
+      - name: Tag Generic
+        run: |
+          docker tag artbashkirev/codespace:ml artbashkirev/codespace:ml-${{ github.sha }}
 
       - name: Push to Docker Hub
         if: ${{ github.ref == 'refs/heads/main' }}
@@ -100,13 +106,16 @@ jobs:
           export VCS_REF=$(git rev-parse HEAD)
           npm install -g @devcontainers/cli
 
-      - name: Build webdev
+      - name: Build WebDev
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           devcontainer build \
             --workspace-folder ./devcontainers/webdev/ \
-              --image-name artbashkirev/codespace:webdev-${{ github.sha }} \
               --image-name artbashkirev/codespace:webdev
+  
+      - name: Tag Generic
+        run: |
+          docker tag artbashkirev/codespace:webdev artbashkirev/codespace:webdev-${{ github.sha }}
 
       - name: Push to Docker Hub
         if: ${{ github.ref == 'refs/heads/main' }}
