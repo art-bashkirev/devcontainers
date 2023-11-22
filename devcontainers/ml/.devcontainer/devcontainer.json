@@ -12,8 +12,12 @@
                 "inferrinizzard.prettier-sql-vscode",
                 "mathematic.vscode-pdf",
                 "ms-python.python",
+                "ms-python.black-formatter",
+                "ms-vscode.cpptools",
                 "ms-vscode.hexeditor",
-                "ms-vsliveshare.vsliveshare"
+                "ms-vsliveshare.vsliveshare",
+                "vscjava.vscode-java-debug",
+                "ms-toolsai.jupyter"
             ],
             "settings": {
                 "breadcrumbs.enabled": true,

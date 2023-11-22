@@ -36,7 +36,7 @@ RUN pip3 install --upgrade --no-cache-dir \
 
 # Install Competition.st
 RUN cd /tmp && \
-    # git clone --depth 1 https://github.com/art-bashkirev/competition.st.git
+    git clone --depth 1 https://github.com/art-bashkirev/Competition.st.git
 # ! TODO
 
 
