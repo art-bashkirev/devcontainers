@@ -4,7 +4,8 @@ FROM alpine:latest
 USER root
 
 RUN apk add --no-cache \
-        doas \
+        sudo \
+        shadow \
         zsh \
         make \
         curl \
@@ -15,8 +16,9 @@ RUN apk add --no-cache \
         py3-pip
 
 RUN adduser code -G wheel \
-    --home "/home/code" \
-    --disabled-password
+        --home "/home/code" \
+        --disabled-password && \
+    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
 
 # Install Python packages
 RUN pip install --upgrade --no-cache-dir \
