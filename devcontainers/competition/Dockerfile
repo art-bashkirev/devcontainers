@@ -36,8 +36,12 @@ RUN pip3 install --upgrade --no-cache-dir \
 
 # Install Competition.st
 RUN cd /tmp && \
-    git clone --depth 1 https://github.com/art-bashkirev/Competition.st.git
-# ! TODO
+    git clone --depth 1 https://github.com/art-bashkirev/Competition.st.git && \
+    cd Competition.st && \
+    make && \
+    make install && \
+    cd .. && \
+    rm --recursive --force Competition.st
 
 
 # Set user back
