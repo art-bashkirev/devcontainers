@@ -36,6 +36,7 @@ RUN cd /tmp && \
     cd .. && \
     rm -f -r Competition.st
 
+RUN chsh -s $(which zsh) code
 
 # Set user back
 USER code
@@ -44,5 +45,3 @@ USER code
 RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 COPY .zshrc /home/code/.zshrc
-RUN doas chsh -s $(which zsh) $(whoami)
-RUN export PATH=$PATH:/home/code/.local/bin
