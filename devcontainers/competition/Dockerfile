@@ -36,7 +36,8 @@ RUN cd /tmp && \
     cd .. && \
     rm -f -r Competition.st
 
-RUN chsh -s $(which zsh) code
+RUN echo "auth  sufficient  pam_shells.so" > /etc/pam.d/chsh && \
+    chsh -s $(which zsh) code
 
 # Set user back
 USER code
