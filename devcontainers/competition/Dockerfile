@@ -15,6 +15,10 @@ RUN apk add --no-cache \
         python3-dev \
         py3-pip
 
+RUN adduser code -G wheel \
+    --home "/home/code" \
+    --disabled-password
+
 # Install Python packages
 RUN pip install --upgrade --no-cache-dir \
     pip \
@@ -31,10 +35,6 @@ RUN cd /tmp && \
     make install && \
     cd .. && \
     rm -f -r Competition.st
-
-RUN adduser code -G wheel \
-    --home "/home/code"
-
 
 RUN echo "auth  sufficient  pam_shells.so" > /etc/pam.d/chsh && \
     chsh -s $(which zsh) code
