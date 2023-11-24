@@ -25,7 +25,7 @@
                 "editor.folding": false,
                 "editor.foldingHighlight": false,
                 "editor.formatOnSave": true,
-                "editor.guides.indentation": false,
+                "editor.guides.indentation": true,
                 "editor.hover.enabled": true,
                 "editor.lightbulb.enabled": true,
                 "editor.matchBrackets": "always",

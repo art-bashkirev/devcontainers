@@ -17,7 +17,7 @@ RUN apk add --no-cache \
 
 RUN adduser code -G wheel \
     --home "/home/code" \
-    --disabled-password
+    --shell $(which zsh)
 
 # Install Python packages
 RUN pip install --upgrade --no-cache-dir \
@@ -39,10 +39,11 @@ RUN cd /tmp && \
 RUN echo "auth  sufficient  pam_shells.so" > /etc/pam.d/chsh && \
     chsh -s $(which zsh) code
 
+RUN mkdir /workspaces/ && chown -R code /workspaces
+
 # Set user back
 USER code
 
 # Oh-my-Zsh setup
-RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-
 COPY .zshrc /home/code/.zshrc
+RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
