@@ -32,11 +32,12 @@ RUN cd /tmp && \
     cd .. && \
     rm -f -r Competition.st
 
-RUN echo "auth  sufficient  pam_shells.so" > /etc/pam.d/chsh && \
-    adduser code -G wheel \
-    --home "/home/code" \
-    --shell $(which zsh)
+RUN adduser code -G wheel \
+    --home "/home/code"
 
+
+RUN echo "auth  sufficient  pam_shells.so" > /etc/pam.d/chsh && \
+    chsh -s $(which zsh) code
 
 RUN mkdir /workspaces/ && chown -R code /workspaces
 
