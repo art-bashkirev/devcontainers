@@ -1,33 +1,25 @@
-FROM artbashkirev/codespace:latest
-ARG DEBIAN_FRONTEND=noninteractive
+FROM alpine:latest
 
 # Unset user
 USER root
 
-RUN apt update && \
-    apt upgrade --no-install-recommends --yes && \
-    apt install --no-install-recommends --yes \
+RUN apk add --no-cache \
+        doas \
         zsh \
-        clang \
-        llvm \
-        lld \
-        clang-format \
-        dwarfdump \
-        jq \
-        manpages-dev \
-        build-essential \
-        cmake \
-        wget \
+        make \
         curl \
         git \
-        ninja-build \
-        pkg-config \
-        liblzma-dev libstdc++-12-dev && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/*
+        g++ \
+        python3 \
+        python3-dev \
+        py3-pip
+
+RUN adduser code -G wheel \
+    --home "/home/code" \
+    --disabled-password
 
 # Install Python packages
-RUN pip3 install --upgrade --no-cache-dir \
+RUN pip install --upgrade --no-cache-dir \
     pip \
     black \
     numpy \
@@ -41,8 +33,15 @@ RUN cd /tmp && \
     make && \
     make install && \
     cd .. && \
-    rm --recursive --force Competition.st
+    rm -f -r Competition.st
 
 
 # Set user back
 USER code
+
+# Oh-my-Zsh setup
+RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+COPY .zshrc /home/code/.zshrc
+RUN sudo chsh -s $(which zsh) $(whoami)
+RUN export PATH=$PATH:/home/code/.local/bin

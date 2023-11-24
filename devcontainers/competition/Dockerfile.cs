@@ -4,9 +4,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 # Unset user
 USER root
 
-# set virtual display
-ENV DISPLAY=":0"
-
 RUN apt update && \
     apt upgrade --no-install-recommends --yes && \
     apt install --no-install-recommends --yes \
@@ -18,28 +15,34 @@ RUN apt update && \
         dwarfdump \
         jq \
         manpages-dev \
+        build-essential \
         cmake \
         wget \
         curl \
-        libgl1-mesa-glx \
-        libglib2.0-0 \
-        libsm6 \
-        libxext6 \
-        libxrender-dev \
-        graphviz \
-        pandoc && \
+        git \
+        ninja-build \
+        pkg-config \
+        liblzma-dev libstdc++-12-dev && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Python packages
-COPY ./requirements.txt /requirements.txt
-
 RUN pip3 install --upgrade --no-cache-dir \
+    pip \
     black \
     numpy \
     matplotlib \
-    setuptools && \
-    pip3 install --upgrade --no-cache-dir -r /requirements.txt
+    setuptools
+
+# Install Competition.st
+RUN cd /tmp && \
+    git clone --depth 1 https://github.com/art-bashkirev/Competition.st.git && \
+    cd Competition.st && \
+    make && \
+    make install && \
+    cd .. && \
+    rm --recursive --force Competition.st
+
 
 # Set user back
 USER code
