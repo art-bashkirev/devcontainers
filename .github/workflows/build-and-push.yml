@@ -1,13 +1,12 @@
 on:
- workflow_dispatch:
- push:
-   branches:
-     - main
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "dist/**"
 
 jobs:
-  
-
-
   build-generic:
     runs-on: ubuntu-latest
     continue-on-error: false
