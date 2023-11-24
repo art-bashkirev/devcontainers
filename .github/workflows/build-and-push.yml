@@ -166,9 +166,10 @@ jobs:
             --workspace-folder ./devcontainers/competition/ \
               --image-name artbashkirev/codespace:competition
   
-      - name: Tag Generic
+      - name: Tag Competition
         run: |
           docker tag artbashkirev/codespace:competition artbashkirev/codespace:competition-${{ github.sha }}
+          docker tag artbashkirev/codespace:competition artbashkirev/codespace:comp
 
       - name: Push to Docker Hub
         if: ${{ github.ref == 'refs/heads/main' }}
