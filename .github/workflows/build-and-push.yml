@@ -176,3 +176,4 @@ jobs:
         run: |
           docker push artbashkirev/codespace:competition-${{ github.sha }}
           docker push artbashkirev/codespace:competition
+          docker push artbashkirev/codespace:comp
