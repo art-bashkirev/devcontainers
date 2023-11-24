@@ -44,5 +44,5 @@ USER code
 RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 COPY .zshrc /home/code/.zshrc
-RUN sudo chsh -s $(which zsh) $(whoami)
+RUN doas chsh -s $(which zsh) $(whoami)
 RUN export PATH=$PATH:/home/code/.local/bin
