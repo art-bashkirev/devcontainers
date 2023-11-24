@@ -16,9 +16,8 @@ RUN apk add --no-cache \
         py3-pip
 
 RUN adduser code -G wheel \
-        --home "/home/code" \
-        --disabled-password && \
-    echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
+    --home "/home/code" \
+    --disabled-password
 
 # Install Python packages
 RUN pip install --upgrade --no-cache-dir \
@@ -45,5 +44,5 @@ USER code
 RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 COPY .zshrc /home/code/.zshrc
-RUN doas chsh -s $(which zsh) $(whoami)
+RUN sudo chsh -s $(which zsh) $(whoami)
 RUN export PATH=$PATH:/home/code/.local/bin
