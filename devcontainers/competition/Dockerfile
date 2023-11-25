@@ -3,17 +3,20 @@ FROM alpine:latest
 # Unset user
 USER root
 
-RUN apk add --no-cache \
-        doas \
-        shadow \
-        zsh \
-        make \
-        curl \
-        git \
-        g++ \
-        python3 \
-        python3-dev \
-        py3-pip
+RUN apk add --upgrade --no-cache apk-tools && \
+        apk upgrade --no-cache --available && \
+        apk add --upgrade --no-cache \
+                doas \
+                shadow \
+                zsh \
+                make \
+                curl \
+                git \
+                g++ \
+                python3 \
+                python3-dev \
+                py3-pip && \
+        apk cache clean
 
 RUN adduser code -G wheel \
     --home "/home/code" \
