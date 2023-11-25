@@ -153,5 +153,5 @@
         8080, /* http-server */
         8000, /* django */
     ],
-    "postCreateCommand": "pip install --upgrade -r requirements.txt"
+    "postCreateCommand": "st"
 }
