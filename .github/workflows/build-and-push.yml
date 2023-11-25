@@ -40,13 +40,13 @@ jobs:
         
       - name: Tag Generic
         run: |
-          docker tag artbashkirev/codespace:generic artbashkirev/codespace:generic-${{ github.sha }}
+          # docker tag artbashkirev/codespace:generic artbashkirev/codespace:generic-${{ github.sha }}
           docker tag artbashkirev/codespace:generic artbashkirev/codespace:latest
 
       - name: Push to Docker Hub
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          docker push artbashkirev/codespace:generic-${{ github.sha }}
+          # docker push artbashkirev/codespace:generic-${{ github.sha }}
           docker push artbashkirev/codespace:generic
           docker push artbashkirev/codespace:latest
 
@@ -84,12 +84,12 @@ jobs:
 
       - name: Tag Generic
         run: |
-          docker tag artbashkirev/codespace:ml artbashkirev/codespace:ml-${{ github.sha }}
+          # docker tag artbashkirev/codespace:ml artbashkirev/codespace:ml-${{ github.sha }}
 
       - name: Push to Docker Hub
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          docker push artbashkirev/codespace:ml-${{ github.sha }}
+          # docker push artbashkirev/codespace:ml-${{ github.sha }}
           docker push artbashkirev/codespace:ml
 
   build-webdev:
@@ -126,12 +126,12 @@ jobs:
   
       - name: Tag Generic
         run: |
-          docker tag artbashkirev/codespace:webdev artbashkirev/codespace:webdev-${{ github.sha }}
+          # docker tag artbashkirev/codespace:webdev artbashkirev/codespace:webdev-${{ github.sha }}
 
       - name: Push to Docker Hub
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          docker push artbashkirev/codespace:webdev-${{ github.sha }}
+          # docker push artbashkirev/codespace:webdev-${{ github.sha }}
           docker push artbashkirev/codespace:webdev
 
   build-competition:
@@ -168,12 +168,12 @@ jobs:
   
       - name: Tag Competition
         run: |
-          docker tag artbashkirev/codespace:competition artbashkirev/codespace:competition-${{ github.sha }}
+          # docker tag artbashkirev/codespace:competition artbashkirev/codespace:competition-${{ github.sha }}
           docker tag artbashkirev/codespace:competition artbashkirev/codespace:comp
 
       - name: Push to Docker Hub
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          docker push artbashkirev/codespace:competition-${{ github.sha }}
+          # docker push artbashkirev/codespace:competition-${{ github.sha }}
           docker push artbashkirev/codespace:competition
           docker push artbashkirev/codespace:comp
