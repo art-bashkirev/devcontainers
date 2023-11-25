@@ -3,10 +3,11 @@ FROM alpine:latest
 # Unset user
 USER root
 
+# Install packages
 RUN apk add --upgrade --no-cache apk-tools && \
         apk upgrade --no-cache --available && \
         apk add --upgrade --no-cache \
-                doas \
+                sudo \
                 shadow \
                 zsh \
                 make \
@@ -18,9 +19,12 @@ RUN apk add --upgrade --no-cache apk-tools && \
                 py3-pip && \
         apk cache clean
 
-RUN adduser code -G wheel \
-    --home "/home/code" \
-    --disabled-password
+# Add user
+RUN adduser -D code -G wheel \
+            --home "/home/code" \
+            --disabled-password && \
+    echo "code ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/code && \
+    chmod 0440 /etc/sudoers.d/code
 
 # Install Python packages
 RUN pip install --upgrade --no-cache-dir \
@@ -39,6 +43,7 @@ RUN cd /tmp && \
     cd .. && \
     rm -f -r Competition.st
 
+# Shell to Zsh
 RUN echo "auth  sufficient  pam_shells.so" > /etc/pam.d/chsh && \
     chsh -s $(which zsh) code
 
