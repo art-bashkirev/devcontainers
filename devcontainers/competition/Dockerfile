@@ -53,5 +53,5 @@ RUN mkdir /workspaces/ && chown -R code /workspaces
 USER code
 
 # Oh-my-Zsh setup
-COPY .zshrc /home/code/.zshrc
 RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+COPY .zshrc /home/code/.zshrc
