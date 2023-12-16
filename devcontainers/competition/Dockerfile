@@ -27,12 +27,12 @@ RUN adduser -D code -G wheel \
     chmod 0440 /etc/sudoers.d/code
 
 # Install Python packages
-RUN pip install --upgrade --no-cache-dir \
-    pip \
-    black \
-    numpy \
-    matplotlib \
-    setuptools
+RUN pip install --upgrade --no-cache-dir --break-system-packages \
+            pip \
+            black \
+            numpy \
+            matplotlib \
+            setuptools
 
 # Install Competition.st
 RUN cd /tmp && \
