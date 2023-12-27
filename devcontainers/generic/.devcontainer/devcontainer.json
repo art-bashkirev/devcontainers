@@ -20,7 +20,8 @@
                 "redhat.java",
                 "vscjava.vscode-java-debug",
                 // "vsls-contrib.gitdoc",
-                "ms-toolsai.jupyter"
+                "ms-toolsai.jupyter",
+                "ms-vscode.makefile-tools"
             ],
             "settings": {
                 "breadcrumbs.enabled": true,
