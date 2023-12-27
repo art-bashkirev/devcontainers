@@ -23,8 +23,8 @@ RUN apt update && apt install --no-install-recommends --yes \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install Node.js
-RUN echo "Installing Node.js..."
+# Install Proto manager
+RUN curl -fsSL https://moonrepo.dev/install/proto.sh | bash
 
 # Install Python packages
 RUN pip install --upgrade --no-cache-dir \
