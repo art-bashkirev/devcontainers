@@ -12,10 +12,19 @@ RUN apt update && apt install --no-install-recommends --yes \
         clang-format \
         dwarfdump \
         jq \
-        manpages-dev && \
+        manpages-dev \
+        build-essential \
+        cmake \
+        wget \
+        curl \
+        git \
+        ninja-build \
+        pkg-config && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Install Node.js
+RUN echo "Installing Node.js..."
 
 # Install Python packages
 RUN pip install --upgrade --no-cache-dir \
