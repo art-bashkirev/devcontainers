@@ -17,24 +17,9 @@ ENV DISPLAY=":0"
 RUN apt update && \
     apt upgrade --no-install-recommends --yes && \
     apt install --no-install-recommends --yes \
-        zsh \
-        clang \
-        llvm \
-        lld \
-        clang-format \
-        dwarfdump \
-        jq \
-        manpages-dev \
         openbox \
         xvfb \
         x11vnc \
-        build-essential \
-        cmake \
-        wget \
-        curl \
-        git \
-        ninja-build \
-        pkg-config \
         libgtk-3-dev \
         liblzma-dev libstdc++-12-dev && \
     apt clean && \
