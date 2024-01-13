@@ -13,7 +13,8 @@
                 "ms-python.python",
                 "ms-vscode.hexeditor",
                 "github.github-vscode-theme",
-                "ms-toolsai.jupyter"
+                "ms-toolsai.jupyter",
+                "ms-vscode.cpptools"
             ],
             "settings": {
                 "breadcrumbs.enabled": false,
