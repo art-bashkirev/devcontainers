@@ -14,6 +14,7 @@ RUN apk add --upgrade --no-cache apk-tools && \
                 curl \
                 git \
                 g++ \
+                gcc \
                 python3 \
                 python3-dev \
                 py3-pip && \
@@ -32,7 +33,8 @@ RUN pip install --upgrade --no-cache-dir --break-system-packages \
             black \
             numpy \
             matplotlib \
-            setuptools
+            setuptools \
+            ipykernel
 
 # Install Competition.st
 RUN cd /tmp && \
