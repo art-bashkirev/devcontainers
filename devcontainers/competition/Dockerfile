@@ -17,7 +17,8 @@ RUN apk add --upgrade --no-cache apk-tools && \
                 gcc \
                 python3 \
                 python3-dev \
-                py3-pip && \
+                py3-pip \
+                py3-psutil && \
         apk cache clean
 
 # Add user
