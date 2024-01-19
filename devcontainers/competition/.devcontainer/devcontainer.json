@@ -31,7 +31,7 @@
                 "editor.lightbulb.enabled": true,
                 "editor.matchBrackets": "always",
                 "editor.minimap.enabled": false,
-                "editor.occurrencesHighlight": true,
+                "editor.occurrencesHighlight": "singleFile",
                 "editor.parameterHints.enabled": true,
                 "editor.quickSuggestions": {
                     "other": true,
@@ -76,6 +76,7 @@
                 "problems.decorations.enabled": false,
                 "python.formatting.provider": "black",
                 "python.terminal.executeInFileDir": true,
+                "python.terminal.activateEnvInCurrentTerminal": true,
                 "remote.otherPortsAttributes": {
                     "onAutoForward": "silent"
                 },
@@ -98,6 +99,7 @@
                 "terminal.integrated.shellIntegration.decorationsEnabled": "never", /* Remove decoration for each command */
                 "terminal.integrated.tabs.description": "${task}${separator}${local}", /* Remove cwdFolder from description */
                 "terminal.integrated.tabs.showActiveTerminal": "never",
+                "terminal.integrated.enablePersistentSessions": true,
                 "window.autoDetectColorScheme": false,
                 "workbench.colorCustomizations": {
                     "editor.lineHighlightBorder": "#0000", /* Disable gray border-{bottom,top} on active line */
@@ -129,7 +131,7 @@
                         "terminal.background": "#fff"
                     }
                 },
-                "workbench.colorTheme": "GitHub Dark Default",
+                "workbench.colorTheme": "Default Light+",
                 "window.commandCenter": false,
                 "workbench.editorAssociations": {
                     "*.wav": "vscode.audioPreview"
