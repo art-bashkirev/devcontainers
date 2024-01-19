@@ -35,7 +35,8 @@ RUN pip install --upgrade --no-cache-dir --break-system-packages \
             numpy \
             matplotlib \
             setuptools \
-            ipykernel
+            ipykernel \
+            pandas
 
 # Install Competition.st
 RUN cd /tmp && \
