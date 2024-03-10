@@ -24,7 +24,7 @@ RUN apt update && apt install --no-install-recommends --yes \
     rm -rf /var/lib/apt/lists/*
 
 # Install Proto manager
-RUN curl -fsSL https://moonrepo.dev/install/proto.sh | bash --yes
+RUN curl -fsSL https://moonrepo.dev/install/proto.sh | bash -s -- --yes
 
 # Install Python packages
 RUN pip install --upgrade --no-cache-dir \
