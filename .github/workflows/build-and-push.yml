@@ -10,7 +10,7 @@ on:
     
 
 jobs:
-  build-gw:
+  build-gateway:
     runs-on: ubuntu-latest
     continue-on-error: false
     strategy:
@@ -28,18 +28,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Install build bundler
-        if: ${{ github.ref == 'refs/heads/main' }}
-        run: |
-          export VCS_REF=$(git rev-parse HEAD)
-          npm install -g @devcontainers/cli
-
       - name: Build Gateway
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          devcontainer build \
-            --workspace-folder ./devcontainers/gw/ \
-            --image-name artbashkirev/codespace:gateway
+          docker build -t artbashkirev/codespace:gateway ./devcontainers/gateway/
               
       - name: Push to Docker Hub
         if: ${{ github.ref == 'refs/heads/main' }}
