@@ -29,7 +29,10 @@ RUN pip install --upgrade --no-cache-dir \
     ipykernel ipywidgets jupyter
 
 RUN mkdir /workspaces/ && chown -R code:code /workspaces
+
 COPY postCreateCommand /opt/bin/postCreateCommand
+COPY monospace-theme-0.1.3.vsix /opt/exts/monospace-theme-0.1.3.vsix
+COPY monospace-file-icon-theme-0.1.3.vsix /opt/exts/monospace-file-icon-theme-0.1.3.vsix
 
 # Set user
 USER code
