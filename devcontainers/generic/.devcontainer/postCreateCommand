@@ -2,6 +2,7 @@
 
 # Check if packages.txt exists and is readable
 if [[ -f packages.txt && -r packages.txt ]]; then
+    apt-get update
     xargs sudo apt-get --yes install < packages.txt
 else
     echo "packages.txt does not exist or is not readable."
