@@ -6,10 +6,7 @@ USER root
 
 RUN apt update && apt install --no-install-recommends --yes \
         zsh \
-        clang \
-        llvm \
-        lld \
-        clang-format \
+        g++ \
         dwarfdump \
         jq \
         manpages-dev \
@@ -18,7 +15,6 @@ RUN apt update && apt install --no-install-recommends --yes \
         wget \
         curl \
         git \
-        ninja-build \
         pkg-config && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
@@ -33,6 +29,7 @@ RUN pip install --upgrade --no-cache-dir \
     ipykernel ipywidgets jupyter
 
 RUN mkdir /workspaces/ && chown -R code:code /workspaces
+COPY postCreateCommand /opt/bin/postCreateCommand
 
 # Set user
 USER code
