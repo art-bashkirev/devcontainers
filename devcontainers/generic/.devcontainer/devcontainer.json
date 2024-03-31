@@ -8,7 +8,6 @@
             "extensions": [
                 "/opt/exts/monospace-file-icon-theme-0.1.3.vsix",
                 "/opt/exts/monospace-theme-0.1.3.vsix",
-                // "PKief.material-product-icons",
                 "inferrinizzard.prettier-sql-vscode",
                 "mathematic.vscode-pdf",
                 "ms-python.python",
@@ -113,9 +112,10 @@
                 "terminal.integrated.tabs.description": "${task}${separator}${local}", /* Remove cwdFolder from description */
                 "terminal.integrated.tabs.showActiveTerminal": "never",
                 "window.autoDetectColorScheme": false,
+                
                 "workbench.colorTheme": "Monospace Dark",
                 "workbench.iconTheme": "monospace",
-                // "workbench.productIconTheme": "material-product-icons",
+                
                 "window.commandCenter": false,
                 "workbench.editorAssociations": {
                     "*.wav": "vscode.audioPreview"
@@ -123,7 +123,6 @@
                 "workbench.editor.closeOnFileDelete": true,
                 "workbench.editor.enablePreview": false,
                 "workbench.editor.untitled.hint": "hidden",
-                "workbench.iconTheme": "vs-seti",
                 "workbench.preferredDarkColorTheme": "Monospace Dark",
                 "workbench.preferredLightColorTheme": "Monospace Light",
                 "workbench.startupEditor": "none",
