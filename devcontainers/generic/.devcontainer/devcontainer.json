@@ -1,8 +1,5 @@
 {
     "build": {
-        "args": {
-            "VCS_REF": "${localEnv:VCS_REF}"
-        },
         "context": ".",
         "dockerfile": "../Dockerfile"
     },
@@ -16,9 +13,9 @@
                 "ms-vscode.cpptools",
                 "ms-vscode.cpptools-extension-pack",
                 "ms-vscode.hexeditor",
-                "ms-vsliveshare.vsliveshare",
-                "redhat.java",
-                "vscjava.vscode-java-debug",
+                // "ms-vsliveshare.vsliveshare",
+                // "redhat.java",
+                // "vscjava.vscode-java-debug",
                 // "vsls-contrib.gitdoc",
                 "ms-toolsai.jupyter",
                 "ms-vscode.makefile-tools"
