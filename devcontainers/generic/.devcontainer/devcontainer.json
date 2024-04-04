@@ -59,9 +59,6 @@
                 "extensions.ignoreRecommendations": true,
                 "explorer.compactFolders": false,
                 "files.autoSave": "afterDelay",
-                "files.exclude": {
-                    "**/.*": true
-                },
                 "files.insertFinalNewline": true,
                 "files.trimTrailingWhitespace": true,
                 "files.watcherExclude": {
