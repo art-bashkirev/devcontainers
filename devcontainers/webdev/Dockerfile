@@ -20,4 +20,4 @@ RUN pip3 install --upgrade --no-cache-dir -r /requirements.txt
 USER code
 
 # Install Proto manager
-RUN curl -fsSL https://moonrepo.dev/install/proto.sh | zsh -s -- --yes
+RUN zsh -c "curl -fsSL https://moonrepo.dev/install/proto.sh | zsh -s -- --yes"
