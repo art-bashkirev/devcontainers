@@ -42,4 +42,5 @@ RUN sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 
 COPY .zshrc /home/code/.zshrc
 RUN sudo chsh -s $(which zsh) $(whoami)
+RUN sudo chown -R code ~
 RUN export PATH=$PATH:/home/code/.local/bin
