@@ -97,7 +97,7 @@
                 "terminal.integrated.tabs.showActiveTerminal": "never",
                 "window.autoDetectColorScheme": false,
                 
-                "workbench.colorTheme": "Monospace Dark",
+                "workbench.colorTheme": "Monospace Light",
                 "workbench.iconTheme": "monospace",
                 
                 "window.commandCenter": false,
