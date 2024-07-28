@@ -18,7 +18,7 @@ jobs:
     needs: build-generic
     strategy:
       matrix:
-        image: ['ml', 'webdev']
+        image: ['ml']
       fail-fast: true
     steps:
       - name: Checkout
