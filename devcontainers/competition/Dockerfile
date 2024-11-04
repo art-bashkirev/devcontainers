@@ -51,7 +51,7 @@ RUN cd /tmp && \
 RUN echo "auth  sufficient  pam_shells.so" > /etc/pam.d/chsh && \
     chsh -s $(which zsh) code
 
-RUN mkdir /workspaces/ && chown -R code /workspaces
+RUN mkdir /workspaces/ && chown -R code /workspaces/
 
 # Set user back
 USER code
